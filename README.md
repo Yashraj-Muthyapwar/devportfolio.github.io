@@ -4,10 +4,6 @@ A static developer portfolio built with vanilla HTML, CSS, and JavaScript. No bu
 step, no frameworks — just files that work in any browser. Deploys to GitHub Pages
 automatically via GitHub Actions.
 
-**Live demo:** https://Yashraj-Muthyapwar.github.io/devportfolio
-
----
-
 ## What's in here
 
 ```
