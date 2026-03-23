@@ -1,7 +1,7 @@
 # DevPortfolio
 
 A static developer portfolio built with vanilla HTML, CSS, and JavaScript. No build
-step, no frameworks — just files that work in any browser. Deploys to GitHub Pages
+step, no frameworks just files that work in any browser. Deploys to GitHub Pages
 automatically via GitHub Actions.
 
 ## What's in here
