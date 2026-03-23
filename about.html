@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Alice Johnson</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-brand"><a href="index.html">Alice.dev</a></div>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active" aria-current="page">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </nav>
+
+  <main class="about-page">
+
+    <section class="about-hero" aria-label="About me">
+      <h1>About Me</h1>
+      <p class="lead">
+        I'm a software engineer based in San Francisco. I've been writing code
+        professionally for about seven years, mostly on backend infrastructure
+        and API design, with enough front-end work to know what I'm doing.
+      </p>
+    </section>
+
+    <section class="about-story" aria-label="My story">
+      <h2>How I got here</h2>
+      <p>
+        I started out studying computer science without a clear plan of what I'd
+        do with it. My first real job was maintaining a PHP monolith, which
+        taught me a lot about the value of tests and the cost of technical debt.
+      </p>
+      <p>
+        Since then I've worked at a fintech startup (two rounds of "this is an
+        emergency" deployments per week), a mid-size SaaS company (where I
+        learned what Kubernetes actually is versus what the docs say it is), and
+        now ACME Corp, where I mostly work on distributed systems and try not to
+        break production.
+      </p>
+      <p>
+        Outside of work I run, cook badly, and try to read more books than I
+        start.
+      </p>
+    </section>
+
+    <section class="about-skills" aria-label="Skills and tools">
+      <h2>What I work with</h2>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <ul>
+            <li>JavaScript / TypeScript</li>
+            <li>Python</li>
+            <li>Go</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Frameworks</h3>
+          <ul>
+            <li>React</li>
+            <li>Vue.js</li>
+            <li>Node.js / Express</li>
+            <li>FastAPI</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Tools & Infra</h3>
+          <ul>
+            <li>Git / GitHub</li>
+            <li>Docker</li>
+            <li>Kubernetes</li>
+            <li>GitHub Actions</li>
+            <li>PostgreSQL / Redis</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-timeline" aria-label="Work history">
+      <h2>Timeline</h2>
+      <ol class="timeline" reversed>
+        <li>
+          <span class="timeline-year">2022 – now</span>
+          <strong>Senior Software Engineer</strong> — ACME Corp<br />
+          Distributed systems, API design, on-call rotations I did not volunteer for.
+        </li>
+        <li>
+          <span class="timeline-year">2019 – 2022</span>
+          <strong>Software Engineer</strong> — CloudSaaS Inc.<br />
+          Moved our monolith to microservices. Some parts went better than others.
+        </li>
+        <li>
+          <span class="timeline-year">2017 – 2019</span>
+          <strong>Junior Developer</strong> — FinStart<br />
+          Learned that "quick fix" is the most dangerous phrase in software.
+        </li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      Built with HTML, CSS, and vanilla JS.
+      Source on <a href="https://github.com/alice/devportfolio" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+    <p class="footer-note">&copy; <span id="year"></span> Alice Johnson.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

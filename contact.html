@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Alice Johnson</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-brand"><a href="index.html">Alice.dev</a></div>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </nav>
+
+  <main class="contact-page">
+
+    <section class="contact-hero" aria-label="Contact intro">
+      <h1>Get in Touch</h1>
+      <p class="lead">
+        Whether it's a job opportunity, a project idea, or you found a bug —
+        drop me a message. I reply to most things within a day or two.
+      </p>
+    </section>
+
+    <div class="contact-layout">
+
+      <!-- ── Contact Form ─────────────────────────────── -->
+      <section class="contact-form-section" aria-label="Contact form">
+        <h2>Send a Message</h2>
+
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          novalidate
+          aria-label="Contact form"
+        >
+          <!--
+            TODO (for your own fork):
+            1. Sign up at formspree.io
+            2. Replace YOUR_FORM_ID with your actual form ID
+            3. Update the _to field below with your email
+          -->
+          <input type="hidden" name="_to"      value="alice@company.com" />
+          <input type="hidden" name="_subject" value="Portfolio contact form submission" />
+
+          <div class="form-group">
+            <label for="name">Name <span aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              autocomplete="name"
+              placeholder="Your full name"
+              aria-required="true"
+            />
+            <span class="field-error" id="name-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="you@example.com"
+              aria-required="true"
+            />
+            <span class="field-error" id="email-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="What's this about?"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span aria-hidden="true">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="6"
+              placeholder="Say hello..."
+              aria-required="true"
+            ></textarea>
+            <span class="field-error" id="message-error" role="alert"></span>
+          </div>
+
+          <button type="submit" class="btn-primary" id="submit-btn">
+            Send Message
+          </button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <!-- ── Other ways to connect ────────────────────── -->
+      <aside class="contact-links" aria-label="Other contact options">
+        <h2>Other ways</h2>
+        <ul>
+          <li>
+            <strong>GitHub</strong><br />
+            <a href="https://github.com/alice" target="_blank" rel="noopener">github.com/alice</a>
+          </li>
+          <li>
+            <strong>LinkedIn</strong><br />
+            <a href="https://linkedin.com/in/alicejohnson" target="_blank" rel="noopener">linkedin.com/in/alicejohnson</a>
+          </li>
+          <li>
+            <strong>Email</strong><br />
+            <a href="mailto:alice@company.com">alice@company.com</a>
+          </li>
+        </ul>
+        <p class="availability-note">
+          <span class="availability-dot" aria-hidden="true"></span>
+          Available for freelance projects and consulting.
+        </p>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      Built with HTML, CSS, and vanilla JS.
+      Source on <a href="https://github.com/alice/devportfolio" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+    <p class="footer-note">&copy; <span id="year"></span> Alice Johnson.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

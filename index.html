@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alice Johnson — Senior Software Engineer portfolio" />
+  <meta name="author" content="Yashraj" />
+
+  <!-- Open Graph / social preview tags -->
+  <meta property="og:title"       content="Alice Johnson — Senior Software Engineer" />
+  <meta property="og:description" content="Showcasing projects in React, Node.js, and distributed systems." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://alice.github.io/devportfolio" />
+
+  <title>Alice Johnson — Senior Software Engineer</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────── -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-brand">
+      <a href="index.html">Alice.dev</a>
+    </div>
+
+    <ul class="nav-links" role="list">
+      <li><a href="index.html"    class="active" aria-current="page">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- ── Hero Section ───────────────────────────────────── -->
+  <main>
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-content">
+        <span class="hero-greeting">Hey there, I'm</span>
+        <h1>Alice Johnson</h1>
+        <p class="hero-title">Senior Software Engineer @ ACME Corp</p>
+        <p class="hero-bio">
+          I build things for the web — mostly backend systems, the occasional
+          React front end, and whatever needs to stop being on fire in production.
+        </p>
+
+        <!-- Skills badges rendered by js/app.js -->
+        <div class="skill-badges" id="skill-badges" aria-label="Technology skills"></div>
+
+        <div class="hero-cta">
+          <a href="projects.html" class="btn-primary">View My Work</a>
+          <a href="contact.html"  class="btn-secondary">Get in Touch</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="code-window">
+          <div class="code-window-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="window-title">terminal</span>
+          </div>
+          <pre class="code-window-body"><code><span class="c">$ git log --oneline -5</span>
+<span class="s">a3f5b2c</span> feat: add hero section
+<span class="s">d7e8f9a</span> fix: nav mobile layout
+<span class="s">e8f9a0b</span> chore: update deps
+<span class="s">f9a0b1c</span> docs: add README
+<span class="s">0b1c2d3</span> init: project setup
+<span class="c">$ _</span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Featured Projects (preview, rendered via JS) ── -->
+    <section class="featured-section" aria-label="Featured projects">
+      <h2>Featured Projects</h2>
+      <p class="section-sub">A few things I'm proud of. See the <a href="projects.html">full list</a>.</p>
+      <div class="project-grid" id="featured-projects" aria-label="Project cards"></div>
+    </section>
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer>
+    <p>
+      Built with HTML, CSS, and vanilla JS.
+      Source on <a href="https://github.com/alice/devportfolio" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+    <p class="footer-note">
+      &copy; <span id="year"></span> Alice Johnson.
+      <!-- TODO: add your own name here when you fork this project! -->
+    </p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Alice Johnson</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-brand"><a href="index.html">Alice.dev</a></div>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </nav>
+
+  <main class="projects-page">
+
+    <section class="projects-hero" aria-label="Projects intro">
+      <h1>Projects</h1>
+      <p class="lead">Things I've built, some of which I'm allowed to talk about.</p>
+
+      <!-- Filter buttons — JS populates these from data.js -->
+      <div class="filter-bar" id="filter-bar" role="group" aria-label="Filter by technology">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <!-- More buttons added dynamically -->
+      </div>
+    </section>
+
+    <!-- Project cards rendered by js/app.js from js/data.js -->
+    <section aria-label="Project list">
+      <div class="project-grid" id="all-projects"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      Built with HTML, CSS, and vanilla JS.
+      Source on <a href="https://github.com/alice/devportfolio" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+    <p class="footer-note">&copy; <span id="year"></span> Alice Johnson.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
