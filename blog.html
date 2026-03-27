@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects — Alice Johnson</title>
+  <title>Blog — Alice Johnson</title>
+  <meta name="description" content="Technical articles and insights on software engineering, architecture, and development practices." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/enhancements.css" />
+  <link rel="stylesheet" href="css/blog.css" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#6366f1" />
 </head>
@@ -16,8 +18,8 @@
     <ul class="nav-links" role="list">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html" class="active" aria-current="page">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -26,22 +28,24 @@
     </div>
   </nav>
 
-  <main class="projects-page">
+  <main class="blog-page">
 
-    <section class="projects-hero" aria-label="Projects intro">
-      <h1>Projects</h1>
-      <p class="lead">Things I've built, some of which I'm allowed to talk about.</p>
-
-      <!-- Filter buttons — JS populates these from data.js -->
-      <div class="filter-bar" id="filter-bar" role="group" aria-label="Filter by technology">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <!-- More buttons added dynamically -->
-      </div>
+    <section class="blog-hero" aria-label="Blog intro">
+      <h1>Blog</h1>
+      <p class="lead">
+        Technical articles, insights, and lessons learned from building
+        distributed systems and web applications.
+      </p>
     </section>
 
-    <!-- Project cards rendered by js/app.js from js/data.js -->
-    <section aria-label="Project list">
-      <div class="project-grid" id="all-projects"></div>
+    <!-- Blog posts list (rendered by JS) -->
+    <section aria-label="Blog posts">
+      <div id="blog-posts-list" class="blog-posts-grid"></div>
+    </section>
+
+    <!-- Single blog post (rendered by JS when viewing a post) -->
+    <section aria-label="Blog post">
+      <div id="blog-post-container"></div>
     </section>
 
   </main>
