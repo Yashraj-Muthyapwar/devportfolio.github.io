@@ -1,0 +1,407 @@
+/* ═══════════════════════════════════════════════════════════════
+   Advanced Enhancements & 3D Effects
+   Optional visual enhancements for modern browsers
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── 3D Floating Animation for Hero Visual ────────────────────── */
+@keyframes float3D {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotateX(2deg) rotateY(-2deg);
+  }
+  50% {
+    transform: translateY(0px) rotateX(0deg) rotateY(2deg);
+  }
+  75% {
+    transform: translateY(-10px) rotateX(-2deg) rotateY(0deg);
+  }
+}
+
+.code-window {
+  animation: float3D 8s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+/* ─── Parallax Effect on Scroll ──────────────────────────────── */
+.hero-visual {
+  will-change: transform;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─── Advanced Hover Effects ─────────────────────────────────── */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(99, 102, 241, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+
+.project-card:hover::before {
+  left: 100%;
+}
+
+/* ─── Magnetic Button Effect ─────────────────────────────────── */
+.btn-primary,
+.btn-secondary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after,
+.btn-secondary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-primary:hover::after,
+.btn-secondary:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* ─── Skill Badge Glow Effect ────────────────────────────────── */
+.skill-badge {
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.skill-badge::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  opacity: 0;
+  z-index: -1;
+  transition: opacity var(--transition-base);
+  filter: blur(8px);
+}
+
+.skill-badge:hover::after {
+  opacity: 0.4;
+}
+
+/* ─── Text Gradient Animation ────────────────────────────────── */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.nav-brand a {
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary),
+    var(--accent),
+    var(--primary)
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 5s ease infinite;
+}
+
+h1 {
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary),
+    var(--accent),
+    var(--primary)
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 6s ease infinite;
+}
+
+/* ─── Smooth Page Transitions ────────────────────────────────── */
+body {
+  opacity: 0;
+  animation: pageLoad 0.4s ease-out forwards;
+}
+
+@keyframes pageLoad {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ─── Advanced Link Hover ────────────────────────────────────── */
+.project-link {
+  position: relative;
+  display: inline-block;
+}
+
+.project-link::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-base);
+}
+
+.project-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ─── Card Tilt Effect ───────────────────────────────────────── */
+@media (hover: hover) and (pointer: fine) {
+  .project-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .project-card:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(2deg) translateY(-8px);
+  }
+}
+
+/* ─── Timeline Enhanced Animation ────────────────────────────── */
+.timeline li {
+  opacity: 0;
+  animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+.timeline li:nth-child(1) { animation-delay: 0.1s; }
+.timeline li:nth-child(2) { animation-delay: 0.2s; }
+.timeline li:nth-child(3) { animation-delay: 0.3s; }
+.timeline li:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ─── Form Input Focus Effect ────────────────────────────────── */
+.form-group {
+  position: relative;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  animation: inputFocus 0.3s ease;
+}
+
+@keyframes inputFocus {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ─── Loading Skeleton (for future use) ──────────────────────── */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 0%,
+    var(--bg-tertiary) 50%,
+    var(--bg-secondary) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ─── Code Window Enhanced ───────────────────────────────────── */
+.code-window-body {
+  position: relative;
+}
+
+.code-window-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(
+    to left,
+    var(--surface),
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* ─── Theme Toggle Enhanced ──────────────────────────────────── */
+#theme-toggle {
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+#theme-toggle:active {
+  transform: scale(0.9) rotate(20deg);
+}
+
+/* ─── Scroll Progress Indicator ──────────────────────────────── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transform-origin: left;
+  z-index: var(--z-tooltip);
+  transition: transform 0.1s ease;
+}
+
+/* ─── Enhanced Footer ────────────────────────────────────────── */
+footer {
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  border-radius: var(--radius-full);
+}
+
+/* ─── Responsive 3D Effects ──────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Disable 3D effects on mobile for better performance */
+  .code-window {
+    animation: none;
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+  }
+}
+
+/* ─── Reduce Motion Support ──────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .code-window {
+    animation: none;
+  }
+
+  .nav-brand a,
+  h1 {
+    animation: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─── Custom Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: var(--radius-full);
+  transition: background var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) var(--bg-secondary);
+}
+
+/* ─── Print Styles ───────────────────────────────────────────── */
+@media print {
+  nav,
+  footer,
+  .hero-visual,
+  .btn-primary,
+  .btn-secondary,
+  #theme-toggle,
+  .hamburger {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .project-card {
+    page-break-inside: avoid;
+    border: 1px solid #000;
+  }
+}

@@ -19,6 +19,7 @@
     initNavigation();
     initScrollAnimations();
     initScrollEffects();
+    initScrollProgress();
     renderContent();
     setCurrentYear();
 
@@ -126,6 +127,7 @@
 
   function onScroll() {
     revealOnScroll();
+    updateScrollProgress();
   }
 
   function onResize() {
@@ -455,6 +457,24 @@
         document.body.style.overflow = '';
       }
     });
+  }
+
+  // ─── Scroll Progress Indicator ─────────────────────────────────
+  function initScrollProgress() {
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
+  }
+
+  function updateScrollProgress() {
+    const progressBar = document.querySelector('.scroll-progress');
+    if (!progressBar) return;
+
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = window.scrollY;
+    const progress = (scrolled / scrollHeight) * 100;
+
+    progressBar.style.transform = `scaleX(${progress / 100})`;
   }
 
   // ─── Performance Monitoring ────────────────────────────────────
