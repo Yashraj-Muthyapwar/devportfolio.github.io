@@ -1,0 +1,106 @@
+/* ═══════════════════════════════════════════════════════════════
+   Dark Mode Edge Case Overrides
+   Additional dark mode adjustments beyond CSS variables
+   ═══════════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] {
+  /* Enhanced code window in dark mode */
+  .code-window {
+    background: var(--bg-tertiary);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  }
+
+  .code-window-bar {
+    background: var(--surface);
+  }
+
+  /* Improved form elements in dark mode */
+  .form-group input:focus,
+  .form-group textarea:focus {
+    background: var(--bg-tertiary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  }
+
+  /* Enhanced project cards in dark mode */
+  .project-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.3);
+  }
+
+  /* Better button appearance in dark mode */
+  .btn-primary {
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4), 0 4px 6px -2px rgba(99, 102, 241, 0.2);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.5), 0 10px 10px -5px rgba(99, 102, 241, 0.3);
+  }
+
+  /* Enhanced skill badges in dark mode */
+  .skill-badge {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+  }
+
+  .skill-badge:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  /* Timeline adjustments */
+  .timeline li::before {
+    border-color: var(--bg-primary);
+    box-shadow: 0 0 0 2px var(--primary);
+  }
+
+  /* Navigation glass effect in dark mode */
+  #navbar {
+    background: rgba(15, 23, 42, 0.85);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Better readability for code blocks */
+  code, pre {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+  }
+
+  /* Improved filter buttons */
+  .filter-btn:not(.active) {
+    background: var(--bg-tertiary);
+  }
+
+  /* Enhanced contact links section */
+  .contact-links {
+    background: var(--bg-tertiary);
+  }
+
+  /* Better form appearance */
+  #contact-form {
+    background: var(--bg-tertiary);
+  }
+
+  /* Improved availability indicator */
+  .availability-note {
+    background: var(--bg-primary);
+  }
+}
+
+/* Smooth color transitions for all theme-dependent elements */
+[data-theme="dark"] *,
+[data-theme="light"] * {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Preserve animation performance */
+[data-theme="dark"] .project-card,
+[data-theme="light"] .project-card,
+[data-theme="dark"] .skill-badge,
+[data-theme="light"] .skill-badge,
+[data-theme="dark"] .code-window,
+[data-theme="light"] .code-window {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.3s ease,
+              border-color 0.3s ease;
+}
