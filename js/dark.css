@@ -1,0 +1,81 @@
+/* ================================================================
+   DevPortfolio — dark.css
+   Extra overrides loaded when body.dark is active.
+   Most dark-mode styles live in style.css via CSS variables.
+   This file handles edge cases that variables can't cover cleanly.
+   Written by Yashraj
+   ================================================================ */
+
+/* Code window picks up less contrast in dark mode — boost slightly */
+body.dark .code-window {
+  background:    #161b22;
+  box-shadow:    0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .code-window-bar {
+  background: #21262d;
+}
+
+/* Badges */
+body.dark .badge {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  color:       #8b949e;
+}
+
+/* Project cards */
+body.dark .project-card {
+  background:  #161b22;
+  border-color:#30363d;
+}
+
+body.dark .project-card:hover {
+  border-color: #58a6ff;
+  box-shadow:   0 4px 16px rgba(88, 166, 255, 0.12);
+}
+
+body.dark .tech-tag {
+  background: rgba(88, 166, 255, 0.12);
+  color:      #58a6ff;
+}
+
+/* Form fields */
+body.dark input[type="text"],
+body.dark input[type="email"],
+body.dark textarea {
+  background:  #161b22;
+  border-color:#30363d;
+  color:       #e6edf3;
+}
+
+body.dark input:focus,
+body.dark textarea:focus {
+  border-color:#58a6ff;
+  box-shadow:  0 0 0 3px rgba(88, 166, 255, 0.15);
+}
+
+/* Theme toggle icon */
+body.dark #theme-toggle::before {
+  content: '☀️';
+}
+
+/* Timeline */
+body.dark .timeline li {
+  border-left-color: #58a6ff;
+}
+body.dark .timeline-year { color: #58a6ff; }
+
+/* Filter buttons */
+body.dark .filter-btn {
+  background:  #21262d;
+  border-color:#30363d;
+  color:       #8b949e;
+}
+body.dark .filter-btn:hover,
+body.dark .filter-btn.active {
+  background:  #58a6ff;
+  border-color:#58a6ff;
+  color:       #0d1117;
+}
+
+/* Availability dot stays green in dark mode — already inherits */
